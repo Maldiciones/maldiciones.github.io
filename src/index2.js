@@ -1,10 +1,10 @@
 
 
-const BrowserRouter = RouterDOM.BrowserRouter;
-const Switch = RouterDOM.Switch;
-const Route = RouterDOM.Route;
-const Link = RouterDOM.Link;
-const  useParams = Router.useParams;
+const BrowserRouter = ReactRouterDOM.BrowserRouter;
+const Switch = ReactRouterDOM.Switch;
+const Route = ReactRouterDOM.Route;
+const Link = ReactRouterDOM.Link;
+const  useParams = ReactRouter.useParams;
 
 
 // Params are placeholders in the URL that begin
