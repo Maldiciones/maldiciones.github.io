@@ -16,7 +16,7 @@ const Inicio = () => <p>Estamos en Inicio</p>;
 const Editoriales = () => <p>Estamos en Editoriales</p>;
 const Autores = () => <p>Estamos en Autores</p>;
 const Autor = () => <p>Estamos en Autor </p>;
-const Serie = () => <p>Estamos en Serie </p>;
+
 const NF = () => <p>Estamos en NF</p>;
 const Historieta = () => <p>Estamos en Historieta</p>;
 const Ejemplar = () => <p>Estamos en Ejemplar</p>;
@@ -33,7 +33,6 @@ function App() {
                       <Link to="/Autor"><li>Autor</li></Link>
                       <Link to="/Serie"><li>Serie</li></Link>
                       <Link to="/Serie/7"><li>Serie 7</li></Link>
-                      <Link to="/Serie/6/Publicacion/9"><li>Serie 6 Publi 9</li></Link>
                       <Link to="/NF"><li>NF</li></Link>
                       <Link to="/Historieta"><li>Historieta</li></Link>
                       <Link to="/Ejemplar"><li>Ejemplar</li></Link>
@@ -42,15 +41,13 @@ function App() {
               </ul>
               <Switch>
                   <Route exact path="/" component={Inicio} />
-                  <Route exact path="/Editoriales" component={Editoriales} />
-                  <Route exact path="/Autores" component={Autores} />
-                  <Route exact path="/Autor" component={Autor} />
-                  <Route exact path="/Serie" component={Serie} />
-                  <Route exact path="/Serie/:serie" component={SerieConNumero} />
-                  <Route exact path="/Serie/:serie/Publicacion/:publi" component={SeriePublicacion} />
-                  <Route exact path="/NF" component={NF} />
-                  <Route exact path="/Historieta" component={Historieta} />
-                  <Route exact path="/Ejemplar" component={Ejemplar} />
+                  <Route path="/Editoriales" component={Editoriales} />
+                  <Route path="/Autores" component={Autores} />
+                  <Route path="/Autor" component={Autor} />
+                  <Route path="/Serie" component={Serie} />
+                  <Route path="/NF" component={NF} />
+                  <Route path="/Historieta" component={Historieta} />
+                  <Route path="/Ejemplar" component={Ejemplar} />
               </Switch>
           </BrowserRouter>
       </div>
@@ -58,24 +55,33 @@ function App() {
 }
 
 
-const SeriePublicacion = (props) => {
-
+const Serie = (props) => {
+  const { match } = props;
+ 
+ 
   return (
-    <div>
-        SeriePublicacio component: <br/>
-        props.match.params.serie : {props.match.params.serie}  <br/>
-        props.match.params.publi : {props.match.params.publi}  <br/>
-        {console.log({props})}
+    <div>    
+
+       Serie component: <br/>
+        props.match.path : {props.match.path}  <br/>
+        props.match.url : {props.match.url}  <br/>
+        props.location.pathname : {props.location.pathname}  <br/> <br/> <br/> <br/> 
+      <Switch>
+        <Route exact path={props.match.path}>
+          <h3>Please select a topic.</h3>
+        </Route>
+        <Route path={`${props.match.path}/:topicId`} component={Calamar} />         
+      </Switch>
     </div>
   );
 };
 
-const SerieConNumero = (props) => {
+const Calamar = (props) => {
 
   return (
     <div>
         Calamar component: <br/>
-        props.match.params.serie : {props.match.params.serie}  <br/>
+        props.match.params.topicId : {props.match.params.topicId}  <br/>
        
     </div>
   );
