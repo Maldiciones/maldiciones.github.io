@@ -4,7 +4,7 @@ const BrowserRouter = ReactRouterDOM.BrowserRouter;
 const Switch = ReactRouterDOM.Switch;
 const Route = ReactRouterDOM.Route;
 const Link = ReactRouterDOM.Link;
-const  useParams = ReactRouter.useParams;
+
 
 
 // Params are placeholders in the URL that begin
