@@ -24,7 +24,9 @@ const App = props => (
         </ul>
 
         <Switch>
-          <Route path="/:id"><Child /></Route>
+    <Route path="/:id" 
+    render={(props) => <Child {...props}/> }
+    />
         </Switch>
       </div>
 </BrowserRouter>
