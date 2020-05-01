@@ -1,7 +1,7 @@
-const Link = ReactRouterDOM.Link;
-const Route = ReactRouterDOM.Route;
-const BrowserRouter = ReactRouterDOM.BrowserRouter;
-const Switch = ReactRouterDOM.Switch;
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom'
+
 
 const App = props => (
 <BrowserRouter>
@@ -31,16 +31,16 @@ const App = props => (
 )
 
 function Child() {
-    // We can use the `useParams` hook here to access
-    // the dynamic pieces of the URL.
-    let { id } = this.props.match.params.id;
-  
-    return (
-      <div>
-        <h3>ID: {id}</h3>
-      </div>
-    );
-  }
+  // We can use the `useParams` hook here to access
+  // the dynamic pieces of the URL.
+  let { id } = useParams();
+
+   return (
+   <div>
+    <h3>ID: {id}</h3>
+   </div>
+  );
+ }
 
 
 ReactDOM.render(<App />, document.querySelector('#root'));
