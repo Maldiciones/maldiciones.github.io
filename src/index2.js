@@ -2,7 +2,6 @@ const Link = ReactRouterDOM.Link;
 const Route = ReactRouterDOM.Route;
 const BrowserRouter = ReactRouterDOM.BrowserRouter;
 const Switch = ReactRouterDOM.Switch;
-const useParams = ReactRouterDOM.useParams;
 
 const App = props => (
 <BrowserRouter>
@@ -34,7 +33,7 @@ const App = props => (
 function Child() {
     // We can use the `useParams` hook here to access
     // the dynamic pieces of the URL.
-    let { id } = useParams();
+    let { id } = ReactRouterDOM.useParams();
   
     return (
       <div>
