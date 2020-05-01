@@ -1,11 +1,22 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom'
+import React from "react";
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Link,
+  useParams
+} from "react-router-dom";
 
+// Params are placeholders in the URL that begin
+// with a colon, like the `:id` param defined in
+// the route in this example. A similar convention
+// is used for matching dynamic segments in other
+// popular web frameworks like Rails and Express.
 
-const App = props => (
-<BrowserRouter>
-<div>
+export default function App() {
+  return (
+    <BrowserRouter>
+      <div>
         <h2>Accounts</h2>
 
         <ul>
@@ -24,23 +35,24 @@ const App = props => (
         </ul>
 
         <Switch>
-        <Route path="/:id" children={<Child />} />
+          <Route path="/:id" children={<Child />} />
         </Switch>
       </div>
-</BrowserRouter>
-)
+    </BrowserRouter>
+  );
+}
 
 function Child() {
   // We can use the `useParams` hook here to access
   // the dynamic pieces of the URL.
   let { id } = useParams();
 
-   return (
-   <div>
-    <h3>ID: {id}</h3>
-   </div>
+  return (
+    <div>
+      <h3>ID: {id}</h3>
+    </div>
   );
- }
+}
 
 
 ReactDOM.render(<App />, document.querySelector('#root'));
