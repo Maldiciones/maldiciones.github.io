@@ -24,7 +24,7 @@ const App = props => (
         </ul>
 
         <Switch>
-          <Route path="/:id" children={<Child />} />
+          <Route path="/:id"><Child /></Route>
         </Switch>
       </div>
 </BrowserRouter>
@@ -33,7 +33,7 @@ const App = props => (
 function Child() {
     // We can use the `useParams` hook here to access
     // the dynamic pieces of the URL.
-    let { id } = ReactRouter.useParams();
+    let { id } = ReactRouterDOM.useParams();
   
     return (
       <div>
