@@ -50,5 +50,7 @@ function App() {
   );
 }
 
+const Home = () => <p>Estamos en Home</p>;
+const Contact = () => <p> Y Ahora en Contact</p>;
 
 ReactDOM.render(<App />, document.querySelector('#root'));
