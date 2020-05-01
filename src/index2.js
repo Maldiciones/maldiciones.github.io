@@ -2,7 +2,7 @@ const Link = ReactRouterDOM.Link,
 Route = ReactRouterDOM.Route;
 
 const App = props => (
-<ReactRouterDOM.HashRouter>
+<ReactRouterDOM.BrowserRouter>
 <ul>
 <li><Link to="/">A TU PUTA CASA HOMBRE</Link></li>
 <li><Link to="/a">TO A</Link></li>
@@ -12,7 +12,7 @@ const App = props => (
 <Route path="/" exact component={Home} />
 <Route path="/a" component={A} />
 <Route path="/b" component={B} />
-</ReactRouterDOM.HashRouter>
+</ReactRouterDOM.BrowserRouter>
 )
 
 const Home = props => <h1>CASA { "Page location is :" + window.location.href}</h1>
