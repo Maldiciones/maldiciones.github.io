@@ -15,8 +15,8 @@ const App = props => (
 </ReactRouterDOM.HashRouter>
 )
 
-const Home = props => <h1>CASA</h1>
-const A = props => <h1>LETRA A</h1>
-const B = props => <h1>LETRA B</h1>
+const Home = props => <h1>CASA { "Page location is :" + window.location.href}</h1>
+const A = props => <h1>LETRA A { "Page location is :" + window.location.href}</h1>
+const B = props => <h1>LETRA B { "Page location is :" + window.location.href}</h1>
 
 ReactDOM.render(<App />, document.querySelector('#root'));
