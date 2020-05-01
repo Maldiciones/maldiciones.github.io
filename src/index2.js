@@ -13,7 +13,7 @@ import {
 // is used for matching dynamic segments in other
 // popular web frameworks like Rails and Express.
 
-export default function App() {
+function App() {
   return (
     <BrowserRouter>
       <div>
