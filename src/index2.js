@@ -13,44 +13,40 @@ const  useParams = ReactRouter.useParams;
 // is used for matching dynamic segments in other
 // popular web frameworks like Rails and Express.
 
+const Portfolio = props => {
+  const { match } = props;
+
+  let {id} = match.params;
+  return (
+      <div>
+          Portfolio component
+          <p>Url params: {id}</p>
+      </div>
+  );
+};
+
 function App() {
   return (
-    <BrowserRouter>
-      <div>
-        <h2>Accounts</h2>
-
-        <ul>
-          <li>
-            <Link to="/netflix">Netflix</Link>
-          </li>
-          <li>
-            <Link to="/zillow-group">Zillow Group</Link>
-          </li>
-          <li>
-            <Link to="/yahoo">Yahoo</Link>
-          </li>
-          <li>
-            <Link to="/modus-create">Modus Create</Link>
-          </li>
-        </ul>
-
-        <Switch>
-          <Route path="/:id" children={<Child />} />
-        </Switch>
+      <div className="App">
+          <BrowserRouter>
+              <ul>
+                  <li>
+                      <Link to="/">Home</Link>
+                  </li>
+                  <li>
+                      <Link to="/contact">Contact</Link>
+                  </li>
+                  <li>
+                      <Link to="/portfolio/6">Portfolio</Link>
+                  </li>
+              </ul>
+              <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route path="/portfolio/:id" component={Portfolio} />
+                  <Route path="/contact" component={Contact} />
+              </Switch>
+          </BrowserRouter>
       </div>
-    </BrowserRouter>
-  );
-}
-
-function Child() {
-  // We can use the `useParams` hook here to access
-  // the dynamic pieces of the URL.
-  let { id } = useParams();
-
-  return (
-    <div>
-      <h3>ID: {id}</h3>
-    </div>
   );
 }
 
