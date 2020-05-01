@@ -1,22 +1,46 @@
-const Link = ReactRouterDOM.Link,
-Route = ReactRouterDOM.Route;
+const Link = ReactRouterDOM.Link;
+const Route = ReactRouterDOM.Route;
+const BrowserRouter = ReactRouterDOM.BrowserRouter;
+const Switch = ReactRouterDOM.Switch;
 
 const App = props => (
-<ReactRouterDOM.BrowserRouter>
-<ul>
-<li><Link to="/">A TU PUTA CASA HOMBRE</Link></li>
-<li><Link to="/a">TO A</Link></li>
-<li><Link to="/b">TO B</Link></li>
-</ul>
+<BrowserRouter>
+<div>
+        <h2>Accounts</h2>
 
-<Route path="/" exact component={Home} />
-<Route path="/a" component={A} />
-<Route path="/b" component={B} />
-</ReactRouterDOM.BrowserRouter>
+        <ul>
+          <li>
+            <Link to="/netflix">Netflix</Link>
+          </li>
+          <li>
+            <Link to="/zillow-group">Zillow Group</Link>
+          </li>
+          <li>
+            <Link to="/yahoo">Yahoo</Link>
+          </li>
+          <li>
+            <Link to="/modus-create">Modus Create</Link>
+          </li>
+        </ul>
+
+        <Switch>
+          <Route path="/:id" children={<Child />} />
+        </Switch>
+      </div>
+</BrowserRouter>
 )
 
-const Home = props => <h1>CASA { "Page location is :" + window.location.href}</h1>
-const A = props => <h1>LETRA A { "Page location is :" + window.location.href}</h1>
-const B = props => <h1>LETRA B { "Page location is :" + window.location.href}</h1>
+function Child() {
+    // We can use the `useParams` hook here to access
+    // the dynamic pieces of the URL.
+    let { id } = useParams();
+  
+    return (
+      <div>
+        <h3>ID: {id}</h3>
+      </div>
+    );
+  }
+
 
 ReactDOM.render(<App />, document.querySelector('#root'));
