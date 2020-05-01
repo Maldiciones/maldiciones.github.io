@@ -1,0 +1,49 @@
+const Portfolio = props => {
+  const { match } = props;
+
+  let {autor} = match.params;
+  return (
+      <div>
+          Portfolio component
+          <p>Url params: {autor}</p>
+      </div>
+  );
+};
+
+
+const Portfolio = props => {
+  const { match } = props;
+
+  let {id} = match.params;
+  return (
+      <div>
+          Portfolio component
+          <p>Url params: {id}</p>
+      </div>
+  );
+};
+
+
+const Topics = props => {
+  // The `path` lets us build <Route> paths that are
+  // relative to the parent route, while the `url` lets
+  // us build relative links.
+  const { match } = props;
+
+  let {autor} = match.params;
+  let { path } = useRouteMatch();
+  
+
+  return (
+    <div>     
+      <Switch>
+        <Route exact path={path}>
+          <h3>Please select a topic.</h3>
+        </Route>
+        <Route path={`${path}/:topicId`}>
+          <Topic />
+        </Route>
+      </Switch>
+    </div>
+  );
+}
