@@ -33,7 +33,7 @@ const App = props => (
 function Child() {
     // We can use the `useParams` hook here to access
     // the dynamic pieces of the URL.
-    let { id } = ReactRouterDOM.useParams();
+    let { id } = props.match.params.id;
   
     return (
       <div>
