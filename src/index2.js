@@ -2,6 +2,7 @@ const Link = ReactRouterDOM.Link;
 const Route = ReactRouterDOM.Route;
 const BrowserRouter = ReactRouterDOM.BrowserRouter;
 const Switch = ReactRouterDOM.Switch;
+const useParams = ReactRouterDOM.useParams;
 
 const App = props => (
 <BrowserRouter>
