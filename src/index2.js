@@ -1,11 +1,11 @@
-import React from "react";
-import {
-  BrowserRouter,
-  Switch,
-  Route,
-  Link,
-  useParams
-} from "react-router-dom";
+
+
+const BrowserRouter = RouterDOM.BrowserRouter;
+const Switch = RouterDOM.Switch;
+const Route = RouterDOM.Route;
+const Link = RouterDOM.Link;
+const  useParams = Router.useParams;
+
 
 // Params are placeholders in the URL that begin
 // with a colon, like the `:id` param defined in
