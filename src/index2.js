@@ -4,7 +4,7 @@ Route = ReactRouterDOM.Route;
 const App = props => (
 <ReactRouterDOM.HashRouter>
 <ul>
-<li><Link to="/">TO HOME</Link></li>
+<li><Link to="/">A TU PUTA CASA HOMBRE</Link></li>
 <li><Link to="/a">TO A</Link></li>
 <li><Link to="/b">TO B</Link></li>
 </ul>
