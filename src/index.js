@@ -7,11 +7,7 @@ const Link = ReactRouterDOM.Link;
 const NoMatch = ReactRouterDOM.NoMatch;
 const Redirect = ReactRouterDOM.Redirect;
 
-// Params are placeholders in the URL that begin
-// with a colon, like the `:id` param defined in
-// the route in this example. A similar convention
-// is used for matching dynamic segments in other
-// popular web frameworks like Rails and Express.
+
 const Inicio = () => <div><Menu/><p>Estamos en Inicio</p></div>;
 const Editoriales = () => <div><Menu/><p>Estamos en Editoriales</p></div>;
 const Autores = () => <div><Menu/><p> Estamos en Autores ADIOS <Link to="/Serie/605/Publicacion/1520">BOTON</Link></p></div> ;
@@ -79,6 +75,7 @@ const Menu = (props) => {
                   <li><Link to="/Autor">Autor</Link></li>
                   <li><Link to="/Serie">Serie</Link></li>
                   <li><Link to="/Serie/7">Serie 7</Link></li>
+                  <li><Link to="/Serie/maria">Serie Maria</Link></li>
                   <li><Link to="/Serie/6/Publicacion/9">Serie 6 Publi 9</Link></li>
                   <li><Link to="/NF">NF</Link></li>
                   <li><Link to="/Historieta">Historieta</Link></li>
