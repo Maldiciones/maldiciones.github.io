@@ -14,6 +14,7 @@ const Autores = () => <div><Menu/><p> Estamos en Autores ADIOS <Link to="/Serie/
 const Autor = () => <div><Menu/><p>Estamos en Autor </p></div>;
 const Serie = () => <div><Menu/><p>Estamos en Serie </p></div>;
 const NF = () => <div><Menu/><p>Estamos en NF</p></div>;
+const NFColapsacion = () => <div><Menu/><p>Estamos en NF Colapsacion</p></div>;
 const Historieta = () => <div><Menu/><p>Estamos en Historieta</p></div>;
 const Ejemplar = () => <div><Menu/><p>Estamos en Ejemplar</p></div>;
 const Error404 = () => <p> ESTAS EN EL 404 GUAPO POR FIN</p>;
@@ -26,14 +27,16 @@ function App() {
                   <Route exact path="/Editoriales/" component={Editoriales} />
                   <Route exact path="/Autores" component={Autores} />
                   <Route exact path="/Autor" component={Autor} />
-                  <Route exact path="/Serie" component={Serie} />
+                  <Route exact path="/Serie" component={Error404} />
                   <Route exact path="/Serie/:serie" component={SerieConNumero} />
+                  <Route exact path="/Serie/:serie/Publicacion" component={Error404} />
                   <Route exact path="/Serie/:serie/Publicacion/:publi" component={SeriePublicacion} />
                   <Route exact path="/NF" component={NF} />
+                  <Route exact path="/NF/:colapsacion" component={NFColapsacion} />
                   <Route exact path="/Historieta" component={Historieta} />
                   <Route exact path="/Ejemplar" component={Ejemplar} />
-                  <Route path="*" component={Error404} />
-                  
+                  <Route path="/no-encontrado" component={Error404} />
+                  <Redirect to="/no-encontrado">
               </Switch>
           </BrowserRouter>
       </div>
@@ -78,9 +81,10 @@ const Menu = (props) => {
                   <li><Link to="/Serie/maria">Serie Maria</Link></li>
                   <li><Link to="/Serie/6/Publicacion/9">Serie 6 Publi 9</Link></li>
                   <li><Link to="/NF">NF</Link></li>
+                  <li><Link to="/NF/34">NF 34</Link></li>
                   <li><Link to="/Historieta">Historieta</Link></li>
                   <li><Link to="/Ejemplar">Ejemplar</Link></li>
-                  <li><Link to="/Serie/palabra/tontada">/Serie/palabra/tontada3</Link></li>
+                  <li><Link to="/Serie/palabra/tontada">/Serie/palabra/gilipollez</Link></li>
 
 
 </ul>
