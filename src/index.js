@@ -26,16 +26,18 @@ function App() {
                   <Route exact path="/" component={Inicio} />
                   <Route exact path="/Editoriales/" component={Editoriales} />
                   <Route exact path="/Autores" component={Autores} />
-                  <Route exact path="/Autor" component={Autor} />
-                  <Route exact path="/Serie" component={Error404} />
-                  <Route exact path="/Serie/:serie" component={SerieConNumero} />
-                  <Route exact path="/Serie/:serie/Publicacion" component={Error404} />
+                  <Route exact path="/Autor/:autor" component={Autor} />
+                  <Route exact path="/Autor" component={Error404} />
                   <Route exact path="/Serie/:serie/Publicacion/:publi" component={SeriePublicacion} />
-                  <Route exact path="/NF" component={NF} />
+                  <Route exact path="/Serie/:serie/Publicacion" component={Error404} />
+                  <Route exact path="/Serie/:serie" component={SerieConNumero} />
+                  <Route exact path="/Serie" component={Error404} />  
                   <Route exact path="/NF/:colapsacion" component={NFColapsacion} />
+                  <Route exact path="/NF" component={NF} />                  
                   <Route exact path="/Historieta" component={Historieta} />
                   <Route exact path="/Ejemplar" component={Ejemplar} />
                   <Route path="/no-encontrado" component={Error404} />
+                  <Route path="**" component={Error404} />
                   <Redirect to="/no-encontrado"/>
               </Switch>
           </BrowserRouter>
@@ -84,7 +86,7 @@ const Menu = (props) => {
                   <li><Link to="/NF/34">NF 34</Link></li>
                   <li><Link to="/Historieta">Historieta</Link></li>
                   <li><Link to="/Ejemplar">Ejemplar</Link></li>
-                  <li><Link to="/Serie/palabra/tontada">/Serie/palabra/gilipollez</Link></li>
+                  <li><Link to="/Serie/palabra/tontada">/Serie/palabra/gilipollez 8</Link></li>
 
 
 </ul>
