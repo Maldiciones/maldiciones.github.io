@@ -47,3 +47,6 @@ const Topics = props => {
     </div>
   );
 }
+
+Para las rutas
+ { `${props.match.url}/india` }

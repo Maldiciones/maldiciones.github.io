@@ -25,21 +25,6 @@ function App() {
   return (
       <div className="App">
           <BrowserRouter>
-              <ul>
-                  
-                      <Link exact to="/"><li>Inicio</li></Link>
-                      <Link to="/Editoriales"><li>Editoriales</li></Link>
-                      <Link to="/Autores"><li>Autores</li></Link>
-                      <Link to="/Autor"><li>Autor</li></Link>
-                      <Link to="/Serie"><li>Serie</li></Link>
-                      <Link to="/Serie/7"><li>Serie 7</li></Link>
-                      <Link to="/Serie/6/Publicacion/9"><li>Serie 6 Publi 9</li></Link>
-                      <Link to="/NF"><li>NF</li></Link>
-                      <Link to="/Historieta"><li>Historieta</li></Link>
-                      <Link to="/Ejemplar"><li>Ejemplar</li></Link>
-                 
-                  
-              </ul>
               <Switch>
                   <Route exact path="/" component={Inicio} />
                   <Route exact path="/Editoriales/" component={Editoriales} />
@@ -51,8 +36,8 @@ function App() {
                   <Route exact path="/NF" component={NF} />
                   <Route exact path="/Historieta" component={Historieta} />
                   <Route exact path="/Ejemplar" component={Ejemplar} />
-                  <Route path="/not-found" component={Error404} />
-                  <Redirect to="/not-found" />
+                  <Route path="/no-encontrado"component={Error404} />
+                  <Redirect to="/no-encontrado" />
               </Switch>
           </BrowserRouter>
       </div>
@@ -83,7 +68,30 @@ const SerieConNumero = (props) => {
   );
 };
 
+const Menu = (props) => {
 
+  return (
+    <ul>
+                  
+                  <li><Link exact to="/">Inicio</Link></li>
+                  <li><Link to="/Editoriales">Editoriales</Link></li>
+                  <li><Link to="/Autores">Autores</Link></li>
+                  <li><Link to="/Autor">Autor</Link></li>
+                  <li><Link to="/Serie">Serie</Link></li>
+                  <li><Link to="/Serie/7">Serie 7</Link></li>
+                  <li><Link to="/Serie/6/Publicacion/9">Serie 6 Publi 9</Link></li>
+                  <li><Link to="/NF">NF</Link></li>
+                  <li><Link to="/Historieta">Historieta</Link></li>
+                  <li><Link to="/Ejemplar">Ejemplar</Link></li>
+                  <li><Link to="/Serie/palabra/">/Serie/palabra/</Link></li>
+
+
+</ul>
+
+
+  );
+
+};
 
 
 ReactDOM.render(<App />, document.querySelector('#root'));
