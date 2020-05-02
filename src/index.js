@@ -12,15 +12,15 @@ const Redirect = ReactRouterDOM.Redirect;
 // the route in this example. A similar convention
 // is used for matching dynamic segments in other
 // popular web frameworks like Rails and Express.
-const Inicio = () => <p>Estamos en Inicio</p>;
-const Editoriales = () => <p>Estamos en Editoriales</p>;
-const Autores = () => <p> Estamos en Autores ADIOS <Link to="/Serie/605/Publicacion/1520">BOTON</Link></p> ;
-const Autor = () => <p>Estamos en Autor </p>;
-const Serie = () => <p>Estamos en Serie </p>;
-const NF = () => <p>Estamos en NF</p>;
-const Historieta = () => <p>Estamos en Historieta</p>;
-const Ejemplar = () => <p>Estamos en Ejemplar</p>;
-const Error404 = () => <p> ESTAS EN EL 404 GUAPO</p>;
+const Inicio = () => <Menu><p>Estamos en Inicio</p></Menu>;
+const Editoriales = () => <Menu><p>Estamos en Editoriales</p></Menu>;
+const Autores = () => <Menu><p> Estamos en Autores ADIOS <Link to="/Serie/605/Publicacion/1520">BOTON</Link></p></Menu> ;
+const Autor = () => <Menu><p>Estamos en Autor </p></Menu>;
+const Serie = () => <Menu><p>Estamos en Serie </p></Menu>;
+const NF = () => <Menu><p>Estamos en NF</p></Menu>;
+const Historieta = () => <Menu><p>Estamos en Historieta</p></Menu>;
+const Ejemplar = () => <Menu><p>Estamos en Ejemplar</p></Menu>;
+const Error404 = () => <p> ESTAS EN EL 404 GUAPO POR FIN</p>;
 function App() {
   return (
       <div className="App">
@@ -83,7 +83,7 @@ const Menu = (props) => {
                   <li><Link to="/NF">NF</Link></li>
                   <li><Link to="/Historieta">Historieta</Link></li>
                   <li><Link to="/Ejemplar">Ejemplar</Link></li>
-                  <li><Link to="/Serie/palabra/">/Serie/palabra/</Link></li>
+                  <li><Link to="/Serie/palabra/tontada">/Serie/palabra/tontada</Link></li>
 
 
 </ul>
