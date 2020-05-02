@@ -32,7 +32,7 @@ function App() {
                   <Route exact path="/NF" component={NF} />
                   <Route exact path="/Historieta" component={Historieta} />
                   <Route exact path="/Ejemplar" component={Ejemplar} />
-                  <Route path="*"component={Error404} />
+                  <Route path="*" component={Error404} />
                   
               </Switch>
           </BrowserRouter>
