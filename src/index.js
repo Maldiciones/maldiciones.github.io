@@ -32,8 +32,8 @@ function App() {
                   <Route exact path="/NF" component={NF} />
                   <Route exact path="/Historieta" component={Historieta} />
                   <Route exact path="/Ejemplar" component={Ejemplar} />
-                  <Route path="/no-encontrado"component={Error404} />
-                  <Redirect to="/no-encontrado" />
+                  <Route path="*"component={Error404} />
+                  
               </Switch>
           </BrowserRouter>
       </div>
