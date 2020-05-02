@@ -4,8 +4,8 @@ const BrowserRouter = ReactRouterDOM.BrowserRouter;
 const Switch = ReactRouterDOM.Switch;
 const Route = ReactRouterDOM.Route;
 const Link = ReactRouterDOM.Link;
-
-
+const NoMatch = ReactRouterDOM.NoMatch;
+const Redirect = ReactRouterDOM.Redirect;
 
 // Params are placeholders in the URL that begin
 // with a colon, like the `:id` param defined in
@@ -20,7 +20,7 @@ const Serie = () => <p>Estamos en Serie </p>;
 const NF = () => <p>Estamos en NF</p>;
 const Historieta = () => <p>Estamos en Historieta</p>;
 const Ejemplar = () => <p>Estamos en Ejemplar</p>;
-
+const Error404 = () => <p> ESTAS EN EL 404 GUAPO</p>;
 function App() {
   return (
       <div className="App">
@@ -42,7 +42,7 @@ function App() {
               </ul>
               <Switch>
                   <Route exact path="/" component={Inicio} />
-                  <Route exact path="/Editoriales" component={Editoriales} />
+                  <Route exact path="/Editoriales/" component={Editoriales} />
                   <Route exact path="/Autores" component={Autores} />
                   <Route exact path="/Autor" component={Autor} />
                   <Route exact path="/Serie" component={Serie} />
@@ -51,6 +51,8 @@ function App() {
                   <Route exact path="/NF" component={NF} />
                   <Route exact path="/Historieta" component={Historieta} />
                   <Route exact path="/Ejemplar" component={Ejemplar} />
+                  <Route path="/not-found" component={Error404} />
+                  <Redirect to="/not-found" />
               </Switch>
           </BrowserRouter>
       </div>
