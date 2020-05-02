@@ -80,7 +80,7 @@ const Menu = (props) => {
                   <li><Link to="/NF">NF</Link></li>
                   <li><Link to="/Historieta">Historieta</Link></li>
                   <li><Link to="/Ejemplar">Ejemplar</Link></li>
-                  <li><Link to="/Serie/palabra/tontada2">/Serie/palabra/tontada</Link></li>
+                  <li><Link to="/Serie/palabra/tontada">/Serie/palabra/tontada3</Link></li>
 
 
 </ul>
