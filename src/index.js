@@ -36,7 +36,7 @@ function App() {
                   <Route exact path="/Historieta" component={Historieta} />
                   <Route exact path="/Ejemplar" component={Ejemplar} />
                   <Route path="/no-encontrado" component={Error404} />
-                  <Redirect to="/no-encontrado">
+                  <Redirect to="/no-encontrado"/>
               </Switch>
           </BrowserRouter>
       </div>
