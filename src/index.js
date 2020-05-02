@@ -48,7 +48,7 @@ function App() {
 const SeriePublicacion = (props) => {
 
   return (
-    <div>
+    <div><Menu/>
         SeriePublicacio component: <br/>
         props.match.params.serie : {props.match.params.serie}  <br/>
         props.match.params.publi : {props.match.params.publi}  <br/>
@@ -60,7 +60,7 @@ const SeriePublicacion = (props) => {
 const SerieConNumero = (props) => {
 
   return (
-    <div>
+    <div><Menu/>
         Calamar component: <br/>
         props.match.params.serie : {props.match.params.serie}  <br/>
        
