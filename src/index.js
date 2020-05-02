@@ -14,7 +14,7 @@ const Redirect = ReactRouterDOM.Redirect;
 // popular web frameworks like Rails and Express.
 const Inicio = () => <p>Estamos en Inicio</p>;
 const Editoriales = () => <p>Estamos en Editoriales</p>;
-const Autores = () => <p>Estamos en Autores <Link to="/Serie/605/Publicacion/1520"/></p>;
+const Autores = () => <p>Estamos en Autores Vale <Link to="/Serie/605/Publicacion/1520"/></p>;
 const Autor = () => <p>Estamos en Autor </p>;
 const Serie = () => <p>Estamos en Serie </p>;
 const NF = () => <p>Estamos en NF</p>;
